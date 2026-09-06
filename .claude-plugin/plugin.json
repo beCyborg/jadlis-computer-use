@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "computer-use",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "displayName": "Computer Use — рабочий стол macOS с дисциплиной расхода токенов",
   "description": "Скилл-дисциплина для встроенного computer-use MCP: экономия скриншотов и текстовые каналы извлечения, computer_batch с хвостовым кадром, надёжность type/кликов, диагностика (TCC, лок, невидимые слои), рецепты приложений.",
   "author": {

@@ -2,6 +2,16 @@
 
 Формат: [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/), версии — [SemVer](https://semver.org/lang/ru/).
 
+## [1.1.2] — 2026-09-07 — уточнение по screenshot / screenshot note
+
+### Для человека
+- В таблице инструментов отмечено, что у `screenshot()` в текущей сборке нет прежнего параметра `save_to_disk`.
+
+### For agents
+- Changed: `skills/computer-use/SKILL.md` — строка «Скриншот» в таблице инструментов.
+- Changed: `.claude-plugin/plugin.json` — `version` 1.1.1 → 1.1.2.
+- Migration: не требуется.
+
 ## [1.1.1] — 2026-09-06 — двуязычный README и гейты передачи / bilingual README and handover gates
 
 ### Для человека
