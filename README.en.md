@@ -28,7 +28,7 @@ The surface hierarchy: before pixels, check APIs, `osascript` and URL schemes, t
 The plugin installs together with its neighbour — commands are in the [root README](../../README.en.md). On its own:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 claude plugin install computer-use@jadlis
 ```
 
