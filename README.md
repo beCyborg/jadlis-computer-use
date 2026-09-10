@@ -1,6 +1,6 @@
 Русский · [English](README.en.md)
 
-# computer-use — рабочий стол macOS с дисциплиной расхода токенов
+# jadlis-computer-use — рабочий стол macOS с дисциплиной расхода токенов
 
 Claude управляет native-приложениями macOS (Finder, Заметки, Календарь, Карты, Системные настройки, любой софт без API) через **встроенный** в Claude Code MCP-сервер `computer-use`.
 
@@ -21,15 +21,15 @@ flowchart LR
     C --> D["computer-use<br/>пиксельный клик"]
 ```
 
-Иерархия поверхностей: до пикселей проверяются API, `osascript` и URL-схемы, затем браузер. Screen control зарезервирован за тем, до чего ничем другим не дотянуться — нативный UI без API, симуляторы, GUI-only инструменты (тег `computer-use--v1.1.1`).
+Иерархия поверхностей: до пикселей проверяются API, `osascript` и URL-схемы, затем браузер. Screen control зарезервирован за тем, до чего ничем другим не дотянуться — нативный UI без API, симуляторы, GUI-only инструменты (тег `jadlis-computer-use--v2.0.0`).
 
 ## Как поставить
 
-Плагин ставится вместе с соседним — команды в [корневом README](../../README.md). Отдельно:
+Ставится из маркетплейса `jadlis`:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
-claude plugin install computer-use@jadlis
+claude plugin marketplace add https://github.com/beCyborg/jadlis-hub
+claude plugin install jadlis-computer-use@jadlis
 ```
 
 Дальше включение сервера — один раз на проект:
@@ -58,14 +58,14 @@ claude plugin install computer-use@jadlis
 
 - **Оплаты сверх подписки нет,** но нужен план **Pro или Max**: computer-use — research preview, на Team и Enterprise недоступен.
 - **Только macOS и только интерактивная сессия.** В headless-режиме (`claude -p`) сервер не работает.
-- **Не сюда:** веб и залогиненные сайты → плагин **browser** (DOM-aware, дешевле пикселей); Electron-приложения (Slack, Obsidian, VS Code, Discord) → их MCP или CLI; терминал → Bash; файлы проекта → Read/Write/Edit. Есть свой MCP или CLI у приложения — идти туда.
+- **Не сюда:** веб и залогиненные сайты → плагин **jadlis-browser** (DOM-aware, дешевле пикселей); Electron-приложения (Slack, Obsidian, VS Code, Discord) → их MCP или CLI; терминал → Bash; файлы проекта → Read/Write/Edit. Есть свой MCP или CLI у приложения — идти туда.
 - **Твои реальные привилегии.** Рабочий стол работает под твоей учёткой; скилл требует явного подтверждения перед необратимыми действиями. Это правило в промпте, а не техническая блокировка.
 - **Режим отказа — длинная цепочка.** Успех компаундируется по шагам: если 2–3 итерации петли не продвинули задачу, скилл останавливается и спрашивает, а не долбит экран дальше.
 
 ## Обновление
 
 ```bash
-claude plugin update computer-use@jadlis
+claude plugin update jadlis-computer-use@jadlis
 ```
 
 Авто-обновление сторонних маркетплейсов у получателя выключено по умолчанию — включается один раз в `/plugin` → **Marketplaces**. История версий — [CHANGELOG.md](CHANGELOG.md).

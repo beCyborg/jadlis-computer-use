@@ -1,6 +1,24 @@
-# Changelog — computer-use
+# Changelog — jadlis-computer-use
 
 Формат: [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/), версии — [SemVer](https://semver.org/lang/ru/).
+
+## [2.0.0] — 2026-09-10 — выделен в отдельное репо `jadlis-computer-use` / split out into its own repo
+
+### Для человека
+- Плагин переехал из монорепо `jadlis-desktop` в собственное репо и называется теперь `jadlis-computer-use`: ставится `claude plugin install jadlis-computer-use@jadlis`, маркетплейс добавляется по адресу `https://github.com/beCyborg/jadlis-hub`.
+- Короткая команда не изменилась — скилл по-прежнему поднимается сам и доступен как `/computer-use`; полная форма стала `/jadlis-computer-use:computer-use`.
+- Совместимости со старым именем нет: старую установку `computer-use@jadlis` нужно удалить и поставить заново.
+- Соседний браузерный плагин теперь называется `jadlis-browser` — ссылки в тексте обновлены.
+
+### For agents
+- Changed: репо — корень теперь сам плагин (`plugins/computer-use/` → корень), история сохранена через `git filter-repo`.
+- Changed: `.claude-plugin/plugin.json` — `name` `computer-use` → `jadlis-computer-use`, `version` 1.1.3 → 2.0.0, `homepage`/`repository` → `https://github.com/beCyborg/jadlis-computer-use`.
+- Changed: `skills/computer-use/SKILL.md` — кросс-ссылки на соседний плагин `browser` → `jadlis-browser` (имя скилла и короткая команда `/computer-use` не менялись).
+- Changed: `README.md`, `README.en.md` — установка/обновление `jadlis-computer-use@jadlis`, маркетплейс `https://github.com/beCyborg/jadlis-hub`, ссылка на корневой README монорепо убрана (репо теперь одно), H1 и тег схемы приведены к новому имени.
+- Removed: `docs/img/` — картинки принадлежали корневому README монорепо (`hero-jadlis-desktop.webp`, `how-jadlis-desktop.webp`, `hub-12.webp` и промпт к ним); README плагина их не использует.
+- Added: `.github/workflows/ci.yml` — вызов `beCyborg/jadlis-hub/.github/workflows/plugin-ci.yml@main` в режиме `mode: plugin`.
+- Unchanged: имена папок скиллов, `name: computer-use` во frontmatter скилла.
+- Migration: `claude plugin uninstall computer-use@jadlis` → `claude plugin marketplace add https://github.com/beCyborg/jadlis-hub` → `claude plugin install jadlis-computer-use@jadlis`.
 
 ## [1.1.3] — 2026-09-07 — переименование репо / repo renamed
 
