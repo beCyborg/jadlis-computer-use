@@ -1,6 +1,6 @@
 [Русский](README.md) · English
 
-# computer-use — the macOS desktop with token-spend discipline
+# jadlis-computer-use — the macOS desktop with token-spend discipline
 
 Claude drives native macOS apps (Finder, Notes, Calendar, Maps, System Settings, any software without an API) through the computer-use MCP server **built into** Claude Code.
 
@@ -21,15 +21,15 @@ flowchart LR
     C --> D["computer-use<br/>pixel click"]
 ```
 
-The surface hierarchy: before pixels, check APIs, `osascript` and URL schemes, then the browser. Screen control is reserved for what nothing else can reach — native UI without an API, simulators, GUI-only tools (tag `computer-use--v1.1.1`).
+The surface hierarchy: before pixels, check APIs, `osascript` and URL schemes, then the browser. Screen control is reserved for what nothing else can reach — native UI without an API, simulators, GUI-only tools (tag `jadlis-computer-use--v2.0.0`).
 
 ## Install
 
-The plugin installs together with its neighbour — commands are in the [root README](../../README.en.md). On its own:
+Install from the `jadlis` marketplace:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
-claude plugin install computer-use@jadlis
+claude plugin marketplace add https://github.com/beCyborg/jadlis-hub
+claude plugin install jadlis-computer-use@jadlis
 ```
 
 Then enable the server, once per project:
@@ -58,14 +58,14 @@ walk through the settings and turn on Do Not Disturb
 
 - **Nothing to pay beyond the subscription,** but a **Pro or Max** plan is required: computer-use is a research preview and is unavailable on Team and Enterprise.
 - **macOS only, and interactive sessions only.** The server does not work headless (`claude -p`).
-- **Not for this:** the web and logged-in sites → the **browser** plugin (DOM-aware, cheaper than pixels); Electron apps (Slack, Obsidian, VS Code, Discord) → their own MCP or CLI; the terminal → Bash; project files → Read/Write/Edit. If an app has its own MCP or CLI, go there.
+- **Not for this:** the web and logged-in sites → the **jadlis-browser** plugin (DOM-aware, cheaper than pixels); Electron apps (Slack, Obsidian, VS Code, Discord) → their own MCP or CLI; the terminal → Bash; project files → Read/Write/Edit. If an app has its own MCP or CLI, go there.
 - **Your real privileges.** The desktop runs under your account; the skill requires explicit confirmation before irreversible actions. That is a rule in the prompt, not a technical block.
 - **The failure mode is the long chain.** Success compounds across steps: if 2–3 loop iterations have not advanced the task, the skill stops and asks instead of hammering the screen.
 
 ## Update
 
 ```bash
-claude plugin update computer-use@jadlis
+claude plugin update jadlis-computer-use@jadlis
 ```
 
 Auto-update for third-party marketplaces is off by default on the recipient's side — enable it once in `/plugin` → **Marketplaces**. Version history — [CHANGELOG.md](CHANGELOG.md).

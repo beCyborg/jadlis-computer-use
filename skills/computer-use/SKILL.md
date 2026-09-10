@@ -1,6 +1,6 @@
 ---
 name: computer-use
-description: "Use when the user wants to act on their Mac desktop or a native macOS app (Finder, Заметки/Notes, Календарь, Карты, Photos, Системные настройки, Сообщения, iOS Simulator и т.п.) — screenshot the screen, click, type, open an app, click through a built app, cross-app workflows. Third-person tool: drives the built-in computer-use MCP. Triggers: «на моём компьютере», «на рабочем столе», «на экране», «в приложении», «открой приложение», «покажи экран», «сделай скриншот рабочего стола», «прокликай приложение», «в Заметках/Календаре/Картах». Do NOT use for: web/logged-in sites → скилл browser (плагин browser, Playwright MCP) или claude-in-chrome; Electron-приложения (Slack, Obsidian, VS Code, Discord) → их MCP/CLI, не пиксели; terminal/shell → Bash; project files → Read/Write/Edit; web search → поисковые инструменты."
+description: "Use when the user wants to act on their Mac desktop or a native macOS app (Finder, Заметки/Notes, Календарь, Карты, Photos, Системные настройки, Сообщения, iOS Simulator и т.п.) — screenshot the screen, click, type, open an app, click through a built app, cross-app workflows. Third-person tool: drives the built-in computer-use MCP. Triggers: «на моём компьютере», «на рабочем столе», «на экране», «в приложении», «открой приложение», «покажи экран», «сделай скриншот рабочего стола», «прокликай приложение», «в Заметках/Календаре/Картах». Do NOT use for: web/logged-in sites → скилл browser (плагин jadlis-browser, Playwright MCP) или claude-in-chrome; Electron-приложения (Slack, Obsidian, VS Code, Discord) → их MCP/CLI, не пиксели; terminal/shell → Bash; project files → Read/Write/Edit; web search → поисковые инструменты."
 ---
 
 # Computer Use — управление рабочим столом Mac
@@ -14,7 +14,7 @@ description: "Use when the user wants to act on their Mac desktop or a native ma
 Tier-модель (read/click/full), frontmost-гейт, link-safety, запрет финансовых операций и правило «сначала `request_access`» уже загружены как инструкции MCP-сервера в каждой сессии — здесь их НЕ дублируем (иначе рассинхрон при обновлениях). Ниже только дельта сетапа и рабочий процесс.
 
 **Локальная дельта маршрутизации:**
-- Веб / залогиненные сайты → скилл browser (плагин browser из этого же маркетплейса, Playwright MCP в extension mode) либо claude-in-chrome, если он подключён — DOM-aware и дешевле пикселей.
+- Веб / залогиненные сайты → скилл browser (плагин jadlis-browser из этого же маркетплейса, Playwright MCP в extension mode) либо claude-in-chrome, если он подключён — DOM-aware и дешевле пикселей.
 - Electron/Chromium-приложения (Slack, Obsidian, VS Code, Discord…) — браузер в обёртке: их MCP/CLI или CDP-путь на порядок быстрее и точнее скриншотов. Пиксели — только если структурного пути нет.
 - macOS-натив: до пикселей проверь AppleScript/`osascript` и `open` URL-схемы (см. `references/app-recipes.md`) — часто вся задача решается одной командой без единого кадра. Это выбор маршрута ДО запроса доступа; обходить уже полученный отказ пользователя через osascript нельзя.
 - Терминал → Bash tool. Файлы проекта → Read/Write/Edit.
