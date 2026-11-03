@@ -2,6 +2,25 @@
 
 Формат: [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/), версии — [SemVer](https://semver.org/lang/ru/).
 
+## [2.0.1] — 2026-11-03 — новый README и переезд на GitLab / new README and move to GitLab
+
+### Для человека
+
+- Плагин теперь живёт на GitLab: https://gitlab.com/beCyborg/jadlis-computer-use. Старые ссылки на GitHub больше не открываются.
+- Каталог ставится новой командой: `claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git`. Если ты ставил каталог со старой ссылки GitHub, удали его командой `claude plugin marketplace remove jadlis` и поставь всё заново по README. Плагины этого каталога при удалении тоже снимутся.
+- README переписан на русском и английском: таблица «до → после», как устроен скилл, текст для установки через агента, границы и стоимость. Добавлены две картинки: обложка и схема работы.
+- Работа скилла не изменилась.
+
+### For agents
+
+- Changed: `README.md`, `README.en.md` rewritten to the 2026-09 README contract (before → after table, how it works, install via agent prompt / by hand / short command, limits, cost, updating); mermaid diagram removed.
+- Added: `docs/img/hero-jadlis-computer-use.webp`, `docs/img/how-jadlis-computer-use.webp` and their generation prompts in `docs/img/prompts/jadlis-computer-use.md`.
+- Changed: every `github.com/beCyborg/*` link in the README pair now points to `gitlab.com/beCyborg/*`; `marketplace add` uses the full `https://gitlab.com/beCyborg/jadlis-hub.git` URL (non-GitHub hosts have no `owner/repo` shorthand). `README.en.md` first line now matches the house language switch.
+- Changed: `.claude-plugin/plugin.json` `homepage`/`repository` → GitLab; version 2.0.0 → 2.0.1.
+- Changed: CI moved from `.github/workflows/ci.yml` to `.gitlab-ci.yml` including `/ci/plugin-ci.yml` from `beCyborg/jadlis-hub` on GitLab — same checks: `claude plugin validate --strict`, gitleaks full history, README parity, privacy grep.
+- Added: `.gitignore` (`.DS_Store`, Python caches, `.venv/`, `*.bak*`).
+- Migration: `claude plugin marketplace remove jadlis` → `claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git` → `claude plugin install jadlis-computer-use@jadlis`.
+
 ## [2.0.0] — 2026-09-10 — выделен в отдельное репо `jadlis-computer-use` / split out into its own repo
 
 ### Для человека
