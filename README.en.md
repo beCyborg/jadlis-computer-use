@@ -7,7 +7,7 @@ Code — it adds the discipline around it: what replaces a screen frame, what go
 batch, and why a pixel click is last in the queue rather than first.
 
 ```
-claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-hub.git
 claude plugin install jadlis-computer-use@jadlis
 ```
 
@@ -72,7 +72,7 @@ layer outside the capture, and no amount of aiming precision reaches it — only
 You are the installer. Put the jadlis-computer-use plugin from the jadlis marketplace on this Mac.
 This plugin needs no keys, there is nothing secret to ask for.
 Run exactly these commands, verbatim, abbreviating nothing:
-1. claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
+1. claude plugin marketplace add https://github.com/beCyborg/jadlis-hub.git
 2. claude plugin install jadlis-computer-use@jadlis
 3. claude plugin list — show me the jadlis-computer-use line and its version.
 Then tell me in one line: run /mcp, enable the computer-use server and restart Claude Code.
@@ -84,7 +84,7 @@ If a command returns an error — stop, show the output, do not go on to the nex
 **b) The commands by hand.**
 
 ```
-claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-hub.git
 claude plugin install jadlis-computer-use@jadlis
 claude plugin list
 ```

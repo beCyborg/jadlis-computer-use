@@ -7,7 +7,7 @@
 пиксельный клик стоит в очереди последним, а не первым.
 
 ```
-claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-hub.git
 claude plugin install jadlis-computer-use@jadlis
 ```
 
@@ -70,7 +70,7 @@ claude plugin install jadlis-computer-use@jadlis
 Ты — установщик. Поставь на этот Mac плагин jadlis-computer-use из маркетплейса jadlis.
 Ключей этому плагину не нужно, ничего секретного спрашивать не надо.
 Выполни ровно эти команды, дословно, ничего не сокращая:
-1. claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
+1. claude plugin marketplace add https://github.com/beCyborg/jadlis-hub.git
 2. claude plugin install jadlis-computer-use@jadlis
 3. claude plugin list — покажи мне строку про jadlis-computer-use и его версию.
 Потом скажи мне одной строкой: выполнить /mcp, включить сервер computer-use
@@ -83,7 +83,7 @@ claude plugin install jadlis-computer-use@jadlis
 **б) Команды руками.**
 
 ```
-claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-hub.git
 claude plugin install jadlis-computer-use@jadlis
 claude plugin list
 ```
